@@ -7,7 +7,7 @@ input = 20
 # 소수는 자기 자신과 1 외에는 나누어 떨어지지 않음 이걸 증명하면 됨
 # -> 자기 자신과 1 이외의 숫자로 나누어 떨어지면 소수가 아니다
 
-# 모든 숫자 일일이 나누지 말고 num-1 소수로만 나누자 / prime_array에 2~num-1 소수만 담겨있음
+# 모든 숫자 일일이 나누지 말고 2 ~ num-1 소수로만 나누자 / prime_array에 2~num-1 소수만 담겨있음
 def find_prime_list_under_number(number):
     prime_array = []
     for num in range(2, number + 1):

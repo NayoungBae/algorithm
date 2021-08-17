@@ -11,7 +11,7 @@
 # 1) 뒤집어질 때, 즉 0 -> 1 또는 1 -> 0으로 바뀔 때 횟수 추가
 # 2) 첫 번째 원소가 0인지 1인지에 따라서 횟수 추가
 
-input = "1100110011"
+input = "0011001100"
 
 
 def find_count_to_turn_out_to_all_zero_or_all_one(string):
