@@ -8,22 +8,10 @@ shop_orders = ["오뎅", "콜라", "만두"]
 
 
 def is_available_to_order(menus, orders):
-    menus.sort()
+    menus_set = set(menus)
     for order in orders:
-        min_index = 0
-        max_index = len(menus) - 1
-        while min_index <= max_index:
-            guess_index = (min_index + max_index) // 2
-            if menus[guess_index] == order:
-                break
-            elif menus[guess_index] < order:
-                min_index = guess_index + 1
-                continue
-            else:
-                max_index = guess_index - 1
-                continue
-    if min_index > max_index:
-        return False
+        if order not in menus_set:
+            return False
     return True
 
 

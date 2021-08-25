@@ -1,3 +1,4 @@
+# https://nazero.tistory.com/75
 # 음이 아닌 정수들로 이루어진 배열이 있다. 이 수를 적절히 더하거나 빼서 특정한 숫자를 만들려고 한다.
 # 예를 들어 [1, 1, 1, 1, 1]로 숫자 3을 만들기 위해서는 다음 다섯 방법을 쓸 수 있다.
 #
@@ -15,7 +16,6 @@ target_number = 3
 #############################################################################################
 
 # 먼저 좀 더 쉬운 숫자로 생각
-
 # numbers = [2, 3, 1]
 # target_number = 0
 
@@ -41,12 +41,11 @@ target_number = 3
 result_count = 0
 
 
-# 모든 경우의 수 구하기
 # Arguments
 # array: 음이 아닌 정수들로 이루어진 배열
+# target: 만드려고 하는 수
 # current_index: array의 현재 위치(인덱스)
-# current_sum: 현재의 합
-# all_ways: 모든 경우의수(관리하기 위한 배열)/ result 배열을 전달할것임
+# current_cal: 현재의 합
 def get_count_of_ways_to_target_by_doing_plus_or_minus(array, target, current_index, current_cal):
     if current_index == len(array):
         if current_cal == target:

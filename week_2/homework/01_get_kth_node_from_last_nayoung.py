@@ -1,4 +1,4 @@
-#
+# https://nazero.tistory.com/73
 # 링크드 리스트의 끝에서 K번째 값을 반환하시오.
 
 class Node:
