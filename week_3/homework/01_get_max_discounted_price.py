@@ -9,30 +9,22 @@ shop_prices = [30000, 2000, 1500000]
 user_coupons = [20, 40]
 
 
-def insert_sort(array):
-    for i in range(1, len(array)):
-        for j in range(i):
-            if array[i - j - 1] > array[i - j]:
-                array[i - j - 1], array[i - j] = array[i - j], array[i - j - 1]
-            else:
-                break
-    return array
-
-
 def get_max_discounted_price(prices, coupons):
-    prices = insert_sort(prices)
-    coupons = insert_sort(coupons)
-    prices_index = len(prices)-1
-    coupons_index = len(coupons)-1
-    discounted_sum = 0
-    while prices_index >= 0 and coupons_index >= 0:
-        discounted_sum += int(prices[prices_index] * (1 - coupons[coupons_index] * 0.01))
-        prices_index -= 1
-        coupons_index -= 1
-    while prices_index >= 0:
-        discounted_sum += prices[prices_index]
-        prices_index -= 1
-    return discounted_sum
+    prices.sort(reverse=True)
+    coupons.sort(reverse=True)
+    price_index = 0
+    coupon_index = 0
+    max_discounted_price = 0
+
+    while price_index < len(prices) and coupon_index < len(coupons):
+        max_discounted_price += prices[price_index] * (100 - coupons[coupon_index]) / 100
+        price_index += 1
+        coupon_index += 1
+
+    while price_index < len(prices):
+        max_discounted_price += prices[price_index]
+        price_index += 1
+    return max_discounted_price
 
 
 print(get_max_discounted_price(shop_prices, user_coupons))  # 926000
